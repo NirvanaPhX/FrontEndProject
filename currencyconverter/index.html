@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Currency Converter</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="money.js"></script>
+	<script src="main.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div class="header">
+			<h1>Currency Converter</h1>
+		</div>
+
+		<div class="block">
+			<div class="subtitle"><h2>From</h2></div>
+			<div class="icon_container">
+				<div class="selection" id="eurfig">
+					<figure>
+						<img src="img/icons/euflag.svg" alt="Europe Union Flag">
+						<figcaption>&#8364; EUR</figcaption>
+					</figure>
+				</div>
+
+				<div class="selection" id="usafig">
+					<figure>
+						<img src="img/icons/usflag.svg" alt="USA Flag">
+						<figcaption>&#36; USD</figcaption>
+					</figure>	
+				</div>
+
+				<div class="selection" id="canfig">
+					<figure>
+						<img src="img/icons/caflag.svg" alt="Canada Flag">
+						<figcaption>&#36; CAD</figcaption>
+					</figure>
+				</div>
+
+				<div class="selection" id="btcfig">
+					<figure>
+						<img src="img/icons/bitcoin.svg" alt="Bitcoin Icon">
+
+						<figcaption>&#8383; BTC</figcaption>
+					</figure>				</div>
+
+				<div class="selection" id="ethfig">
+					<figure>
+						<img src="img/icons/ethereum.svg" alt="Etherum Icon">
+
+						<figcaption>&#926; ETH</figcaption>
+					</figure>				</div>
+
+				<ul><h2 class="inline">Amount:</h2><input type="number" id="from"></ul>
+			</div>
+		</div>
+
+		<div class="block">
+			<div class="subtitle"><h2>To</h2></div>
+			<div class="icon_container">
+				<div class="selection">
+					<figure>
+						<img src="img/icons/euflag.svg" alt="Europe Union Flag">
+						<figcaption>&#8364; EUR</figcaption>
+					</figure>
+				</div>
+
+				<div class="selection">
+					<figure>
+						<img src="img/icons/usflag.svg" alt="USA Flag">
+						<figcaption>&#36; USD</figcaption>
+					</figure>	
+				</div>
+
+				<div class="selection">
+					<figure>
+						<img src="img/icons/caflag.svg" alt="Canada Flag">
+						<figcaption>&#36; CAD</figcaption>
+					</figure>
+				</div>
+
+				<div class="selection">
+					<figure>
+						<img src="img/icons/bitcoin.svg" alt="Bitcoin Icon">
+
+						<figcaption>&#8383; ETH</figcaption>
+					</figure>				</div>
+
+				<div class="selection">
+					<figure>
+						<img src="img/icons/ethereum.svg" alt="Etherum Icon">
+
+						<figcaption>&#926; BTC</figcaption>
+					</figure>				</div>
+
+				<ul><h2 class="inline">Amount:</h2><input type="number" id="to"></ul>
+			</div>
+		</div>
+
+	<div class="footer">
+		<div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+	</div>
+</body>
+</html>

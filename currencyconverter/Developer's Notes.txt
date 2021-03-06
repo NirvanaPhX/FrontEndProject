@@ -1,0 +1,2 @@
+// Money.js library for conversion
+https://openexchangerates.github.io/money.js/#basic-install
