@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+}
+.header {
+    text-align: center;
+    padding: 3rem;
+    margin: 1rem;
+    background: black;
+    color: cornsilk;
+    font-size: 1.5rem;
+    margin-bottom: 0;
+    text-shadow: 2px 2px ivory;
+    opacity: 0.8;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 2rem;
+    padding-left: 6rem;
+    padding-right:6rem;
+    background-color: black;
+    text-align: center;
+}
+
+.container img {
+    /* visibility: hidden; */
+    opacity: 1;
+    transition-duration: 2000ms;
+    transition-property: opacity;
+}
+
+.container img {
+    opacity: 0;
+    padding: 0.8rem;
+    background-color: white;
+    width: 100%;
+}
+
+.container figcaption {
+    font-size: 2rem;
+    color: white;
+}
+
+.container p {
+    font-size: 1.3rem;
+    color: darkgrey;
+    opacity: 0.6;
+}
+
+figure {
+    border: 2px solid white;
+    margin-top: 5px;
+}
