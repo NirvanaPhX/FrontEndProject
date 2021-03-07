@@ -53,10 +53,13 @@ img {
 
 .selection {
 	padding: 0.5rem;
+	border-radius: 3px;
 }
 
 .selection:hover {
-	transform: scale(1.2);
+	transform: scale(1.1);
+	border: 1px solid white;
+	border-radius: 6px;
 	background: rgb(10, 20, 110);
 	opacity: 0.8;
 }
@@ -75,9 +78,13 @@ img {
 #from, 
 #to {
 	height: 30px;
-	margin-left: 1rem;
 }
 
 .inline {
 	display: inline-block;
 }
+
+#canfigf, #usafigt {
+	background: rgb(10, 20, 110);
+}
+

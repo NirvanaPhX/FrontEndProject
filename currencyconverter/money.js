@@ -42,6 +42,9 @@
 		to : fxSetup.to || fx.base
 	};
 
+	var append = fx.append = (key, value) => {
+		fx.rates[key] = value
+	}
 
 	/* --- Conversion --- */
 

@@ -1,2 +1,8 @@
 // Money.js library for conversion
 https://openexchangerates.github.io/money.js/#basic-install
+
+https://openexchangerates.org/account/app-ids
+74c88ee76ec040979bc2b7841b5b5813
+
+// Using fetch to get JSON
+https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
