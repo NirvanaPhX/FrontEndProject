@@ -6,3 +6,6 @@ https://openexchangerates.org/account/app-ids
 
 // Using fetch to get JSON
 https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
+
+// Using Google Fonts from
+https://fonts.google.com/specimen/Noto+Sans?preview.text_type=custom

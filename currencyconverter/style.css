@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+
 *{
 	padding: 0;
 	margin:0;
@@ -5,7 +7,10 @@
 }
 
 body {
-	background: white;
+	background-image: url("img/background.jpg");
+	background-size: cover;
+	background-color: rgba(0,0,0,0.6);
+	background-blend-mode: multiply;
 	color: white;
 	font-family: 'Noto Sans', sans-serif;
 }
@@ -16,6 +21,7 @@ body {
 	background: rgb(10, 20, 110);
 	color: white;
 	border-radius: 10px;
+	text-shadow: 2px 2px rgba(255,255,255,0.6);
 }
 
 .footer {
@@ -24,6 +30,7 @@ body {
 }
 
 .container {
+	background-color: rgba(255,255,255,0.6);
 	margin: 3rem auto;
 	width: 90%;
 	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
@@ -88,3 +95,14 @@ img {
 	background: rgb(10, 20, 110);
 }
 
+#updatetime, #updaterate, #otherinfo{
+	color: black;
+	display:block;
+	text-align: right;
+	padding-right: 1rem;
+}
+
+#otherinfo::before {
+	content: "*";
+	color: red;
+}
