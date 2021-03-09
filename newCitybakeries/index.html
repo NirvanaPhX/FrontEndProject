@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js"></script>
+    <title>New City Bakery</title>
+</head>
+
+<body>
+    <div class="header">
+        <div>
+            <h1>New City Bakery Co.</h1>
+        </div>
+
+        <div class="contactinfo">
+            <h2>Contact Information</h2>
+            <span>Phone: 403-123-4567</span><span>Address: 123 Bear Street, Calgary, AB</span>
+        </div>
+    </div>
+
+    <div class="container">
+        <form action="post">
+
+            <div class="inputfield form-control">
+                <label for="fname" class="required">First Name: </label>
+                <input type="text" name="fname" id="fname" maxlength="25" pattern="[a-zA-Z-\s]{0,25}"
+                    placeholder="Enter your first name" required>
+            </div><br>
+
+            <div class="inputfield form-control">
+                <label for="lname" class="required">Last Name: </label>
+                <input type="text" name="lname" id="lname" maxlength="25" pattern="[a-zA-Z-\s]{0,25}"
+                    placeholder="Enter your first name" required>
+            </div><br>
+
+            <div class="inputfield form-control">
+                <label for="address" class="required">Address: </label>
+                <input type="text" name="address" id="address" required>
+            </div><br>
+
+            <div class="inputfield form-control">
+                <label for="postalCode" class="required">Postal Code: </label>
+                <input type="text" name="postalCode" id="postalCode"
+                    pattern="[A-Za-z][0-9][A-Za-z][\s]{0,1}[0-9][A-Za-z][0-9]" placeholder="ex:T1T T2T" required>
+            </div><br>
+
+            <div class="inputfield form-control">
+                <label for="tel" class="required">Phone Number: </label>
+                <input type="tel" name="tel" id="tel"
+                    pattern="[0-9]{0,1}[ -]{0,1}[\(]{0,1}[0-9]{3}[\).]{0,1}[ \-.]{0,1}[0-9]{3}[ \-.]{0,1}[0-9]{4}"
+                    placeholder="ex: 000-000-0000" required>
+            </div><br>
+
+            <div class="inputfield form-control">
+                <label for="email" class="required">Email: </label>
+                <input type="email" name="email" id="email"
+                    pattern="[a-zA-Z0-9]{1,}[@]{1}[a-zA-Z0-9]{1,}[.]{1}[a-zA-Z]{1,}" placeholder="example@domain.com"
+                    required>
+            </div><br>
+
+            <div class="form-control-radiobtn">
+                <label for="caketype">Choose the type of cake, you would like</label><br><br>
+                <span class="radiolabelinput">
+                    <input type="radio" name="caketype" id="sheetcake" value="sheetcake">
+                    <label for="sheetcake">Sheet Cake</label>
+                </span>
+                <span class="radiolabelinput">
+                    <input type="radio" name="caketype" id="roundcake" value="roundcake">
+                    <label for="roundcake">Round Cake</label>
+                </span>
+            </div>
+
+            <div class="imgBlock">
+                <label>Choose the layer of your cake</label><br>
+                <div class="row">
+                    <figure class="column">
+                        <img src="img/one-layer-cakes.jpg" alt="A picture of One Layer Cake">
+                        <figcaption>One Layer</figcaption>
+                    </figure>
+
+                    <figure class="column">
+                        <img src="img/two-layer-cakes.jpg" alt="A picture of Two Layer Cake">
+                        <figcaption>Two Layer</figcaption>
+                    </figure>
+
+                    <figure class="column">
+                        <img src="img/three-layer-cakes.jpg" alt="A picture of Three Layer Cake">
+                        <figcaption>Three Layer</figcaption>
+                    </figure>
+
+                </div>
+            </div>
+
+            <div class="form-control-checkbox">
+                <label class="checkboxtitle">Addons:</label><br><br>
+                <input type="checkbox" name="creamcheese" id="creamcheese">
+                <label for="addons">Cream Cheesing Icing:.................................. $5</label><br>
+                <input type="checkbox" name="fruitalmonds" id="fruitalmonds">
+                <label for="addons">Fruit and Almonds Topping:.......................... $7</label><br>
+                <input type="checkbox" name="fruitjam" id="fruitjam">
+                <label for="addons">Fruit Jam Filling:........................................... $4</label><br>
+            </div>
+
+            <div class="buttongroup">
+                <input type="reset" name="Reset" class="btn">
+                <input type="submit" value="Submit" class="btn">
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
