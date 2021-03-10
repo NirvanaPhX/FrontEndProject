@@ -9,3 +9,56 @@ https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
 
 // Using Google Fonts from
 https://fonts.google.com/specimen/Noto+Sans?preview.text_type=custom
+
+
+Another approch to this Problem:
+1. Get conversion rate:
+ var convertRates = undefined;
+ for (let i=0; i < fx.rates.length; i++){
+ if (fx.rates[i].base ==  currencyFrom) {
+ convertRates = fx.rates[i];
+ break;
+ }
+ }
+ if (convertRates) {
+ if(currencyTo =='CAD'){
+ rate = convertRates.CAD;
+ }
+ if(currencyTo =='USD'){
+ rate = convertRates.USD;
+ }
+ if(currencyTo =='ETH'){
+ rate = convertRates.ETH;
+ }
+ if(currencyTo =='BTC'){
+ rate = convertRates.BTC;
+ }
+ if(currencyTo =='EUR'){
+ rate = convertRates.EUR;
+ }
+ }
+
+2. Setting Up a rates as an array as follow:
+ fx.rates = [
+{ 	base: 'USD',
+CAD: 1.26541,
+ETH: 0.00061,
+BTC: 0.000020207795,
+USD: 1,
+EUR: 0.839201
+},
+{ 	base: 'CAD',
+CAD: 1,
+ETH: 0.00061,
+BTC: 0.000020207795,
+USD: .748334,
+EUR: 0.839201
+},
+{ 	base: 'EUR',
+CAD: 1.348834,
+ETH: 0.00061,
+BTC: 0.000020207795,
+USD: .748334,
+EUR: 1
+}
+]

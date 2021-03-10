@@ -146,8 +146,6 @@ function setUpDefaultRate() {
 	fx.base = 'USD';
 }
 
-
-
 // Change the background and border of the selected element
 window.onload = () => {
 	populateCurrencyList();
