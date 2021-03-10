@@ -2,3 +2,30 @@ https://drafts.csswg.org/css-transitions/#transition-delay-property
 
 
 http://css3.bradshawenterprises.com/cfimg/
+
+#SlideShow {
+    width: 740px;
+    height: 588px;
+    animation-name: slide;
+    animation-name: 5s * 3;
+    animation-iteration-count: infinite;
+}
+
+@keyframes slide{
+    0% {
+        background-image: url("img/animal.jpg");
+    }
+    50% {
+        background-image: url("img/lake.jpg");
+    }
+    100% {
+        background-image: url("img/river.jpg");
+    }
+}
+
+
+@keyframes animateText {
+    0%{left:-20%;}
+    50%{left: 100%;}
+    100%{left: -20%;}
+}

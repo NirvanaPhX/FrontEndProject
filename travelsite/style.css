@@ -15,7 +15,7 @@ body {
     color: cornsilk;
     font-size: 1.5rem;
     margin-bottom: 0;
-    text-shadow: 2px 2px ivory;
+    text-shadow: 2px 2px 10px ivory;
     opacity: 0.8;
 }
 
@@ -26,19 +26,15 @@ body {
     padding-right:6rem;
     background-color: black;
     text-align: center;
+    position: relative;
 }
 
-/* .container img { */
-    /* opacity: 1; */
-    /* transition-duration: 2000ms; */
-    /* transition-property: opacity; */
-/* } */
-/*  */
 .container img {
-    width: 100%;
-    display: hidden;
+    width: 720px;
+    height: 488px;
+    padding: 1rem;
 }
-/*  */
+
 .container figcaption {
     font-size: 2rem;
     color: white;
@@ -52,22 +48,58 @@ body {
 
 figure {
     border: 2px solid white;
+    position: absolute; 
     margin-top: 5px;
+    width: 740px;
+    height: 588px;
+    margin-left:auto;
+    margin-right:auto;
+    left:0;
+    right:0;
+    text-align: center;
 }
 
+/* Fade Effect for images */
 .fadein {
-    -webkit-animation-name: fadein;
-    -webkit-animation-duration: 5s;
-    animation-name: fadein;
-    animation-duration: 5s
+    animation-name:fadein;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-duration: 32s;
 }
-
-@-webkit-keyframes fadein {
-    from{opacity: 0};
-    to {opacity: 1}
-}
-
 @keyframes fadein {
-    from{opacity: 0};
-    to {opacity: 1}
+    0%{opacity:1;}
+    9%{opacity:1;}
+    13%{opacity:0;}
+    97%{opacity:0;}
+    100%{opacity:1;}
+}
+
+#imglist1, #imglist2, #imglist3, #imglist4,
+#imglist5, #imglist6, #imglist7  {
+    opacity: 0;
+}
+
+#imglist1{
+    animation-delay: 32s;
+}
+#imglist2{
+    animation-delay: 28s;
+}
+#imglist3{
+    animation-delay: 24s;
+}
+#imglist4{
+    animation-delay: 20s;
+}
+#imglist5{
+    animation-delay: 16s;
+}
+#imglist6{
+    animation-delay: 12s;
+}
+#imglist7 {
+    animation-delay: 8s;
+}
+#imglist8 {
+    animation-delay: 4s;
 }
