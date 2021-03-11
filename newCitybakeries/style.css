@@ -5,20 +5,27 @@
 }
 
 body {
-    background-color: #333;
+    background: linear-gradient(0.25turn, #e0b8b6,#bb8f62);
 }
 
 .header {
-    color: whitesmoke;
+    color: #8d5f52;
     text-align: center;
+    padding-top: 2rem;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    text-shadow: 5px 5px 10px #c69d98;
 }
 
 .contactinfo {
-    color: whitesmoke;
+    color:#646462 ;
+    border-top: 3px solid black;
+    padding-top: 1rem;
+    font-size: 1rem;
 }
 
 .container {
-    color: whitesmoke;
+    color: black;
     text-align: center;
     padding: 2rem;
     margin: 1rem;
@@ -103,17 +110,18 @@ body {
     display: none;
 }
 
-.imgBlock {
+#imgBlock {
     font-size: 1.5rem;
     padding-left: 4rem;
     padding-right: 4rem;
     margin-bottom: 1rem;
 }
 
-.imgBlock label {
+#imgBlock label {
     display: block;
     border: 1px solid black;
     padding: 1rem;
+    margin-bottom: -27px;
 }
 
 figure {
@@ -125,9 +133,34 @@ figure img {
     width: 100%;
 }
 
+figure img:hover {
+    transform: scale(1.2);
+}
 .column {
     flex:33.33%;
 }
 .row {
   display: flex;
+}
+
+.imgbtn {
+ padding: 0.6rem 3.5rem;
+ border-radius: 4px;
+ font-weight: bold;
+}
+
+.imgbtn:hover {
+    background-color:#a27d58;
+}
+.imgbtn:focus {
+    background-color:#a27d58;
+}
+
+#cakearea {
+    font-size: 1.5rem;
+}
+
+#cakearea input {
+    background: transparent;
+    border-bottom: 3px solid black;
 }

@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script src="main.js"></script>
+    <script src="StandardJSFunctions.js"></script>
     <title>New City Bakery</title>
 </head>
 
@@ -74,39 +75,42 @@
                 </span>
             </div>
 
-            <div class="imgBlock">
+            <div id="imgBlock" class="hidden">
                 <label>Choose the layer of your cake</label><br>
                 <div class="row">
                     <figure class="column">
                         <img src="img/one-layer-cakes.jpg" alt="A picture of One Layer Cake">
-                        <figcaption>One Layer</figcaption>
+                        <input type="button" id="layer1" value="One Layer" class="imgbtn"></input>
                     </figure>
 
                     <figure class="column">
                         <img src="img/two-layer-cakes.jpg" alt="A picture of Two Layer Cake">
-                        <figcaption>Two Layer</figcaption>
+                        <input type="button" id="layer2" value="Two Layer" class="imgbtn"></input>
                     </figure>
 
                     <figure class="column">
                         <img src="img/three-layer-cakes.jpg" alt="A picture of Three Layer Cake">
-                        <figcaption>Three Layer</figcaption>
+                        <input type="button" id="layer3" value="Three Layer" class="imgbtn"></input>
                     </figure>
 
                 </div>
             </div>
 
+            <div id="cakearea">
+            </div>
+            <input type="button" id="temp" style="padding: 2rem;" value="temp"></div>
             <div class="form-control-checkbox">
                 <label class="checkboxtitle">Addons:</label><br><br>
-                <input type="checkbox" name="creamcheese" id="creamcheese">
+                <input type="checkbox" name="addons" id="creamcheese" value='creamCheesingIcing'>
                 <label for="addons">Cream Cheesing Icing:.................................. $5</label><br>
-                <input type="checkbox" name="fruitalmonds" id="fruitalmonds">
+                <input type="checkbox" name="addons" id="fruitalmonds" value='fruitAlmondsTopping'>
                 <label for="addons">Fruit and Almonds Topping:.......................... $7</label><br>
-                <input type="checkbox" name="fruitjam" id="fruitjam">
+                <input type="checkbox" name="addons" id="fruitjam" value='fruitJamFilling'>
                 <label for="addons">Fruit Jam Filling:........................................... $4</label><br>
             </div>
 
             <div class="buttongroup">
-                <input type="reset" name="Reset" class="btn">
+                <input type="reset" value="Reset" class="btn">
                 <input type="submit" value="Submit" class="btn">
             </div>
         </form>
