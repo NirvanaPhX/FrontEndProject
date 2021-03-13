@@ -4,10 +4,13 @@
 	<meta charset="UTF-8">
 	<title>Currency Converter</title>
 	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="FocusJS.css">
 	<script src="money.js"></script>
 	<script src="main.js"></script>
+	<script src="MyFocusJS.js"></script>
 </head>
 <body>
+	<span id="help-message" class="msg-icon hidden"></span>
 	<div class="container">
 		<div class="header">
 			<h1>Currency Converter</h1>
@@ -99,7 +102,7 @@
 
 				<div class="displayArea">
 					<h2>Amount:</h2>
-					<input type="number" id="to" disabled>
+					<div id="to"></div>
 					<span id="ToHidden"><h2>USD</h2></span>
 				</div>
 			</div>

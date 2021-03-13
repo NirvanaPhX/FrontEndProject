@@ -1,9 +1,11 @@
-
 var newNamespace = {};
+// Create an array to hold all the elments in the button group
 newNamespace.ArrayOfFromCurrency = [];
 newNamespace.ArrayOfToCurrency = [];
+// Initialize time
 newNamespace.time = null;
 
+// Function to create currency object
 const createCurrency = (id, symbol, selected) => {
 	return {
 		id,
@@ -12,6 +14,7 @@ const createCurrency = (id, symbol, selected) => {
 	}
 }
 
+// Find the selected element in the button group
 function findSelected(list) {
 	for (let i = 0; i < list.length; i++) {
 		if (list[i].selected) {
@@ -44,6 +47,7 @@ function populateCurrencyList() {
 	addToCurrencyList("ethfigt", "ETH", false, newNamespace.ArrayOfToCurrency);
 }
 
+// Once a button is selected change its appearance, reset the other buttons to be unselected
 function changeToSelected(currency, list, displayId) {
 	if (!currency.selected) {
 		currency.selected = true;
@@ -58,30 +62,57 @@ function changeToSelected(currency, list, displayId) {
 	}
 }
 
-function addListenerToArray(list, displayId, id1, id2) {
-	let rate;
+// Bind elements that belong to the same group
+function addListenerToArray(list, displayId, id1, id2, msgText) {
 	for (let i = 0; i < list.length; i++) {
 		document.getElementById(list[i].id).addEventListener("click", event => {
 			changeToSelected(list[i], list, displayId);
 			let element1 = document.getElementById(id1);
 			let element2 = document.getElementById(id2);
-			if (element1 && element2 && (element1.value != 0 || element2.value != 0)) {
-				rate = findRate();
-				element2.value = (element1.value * rate).toFixed(2);
+			let rate = findRate();
+			if (element1 && element2 && element1.value != 0) {
+				let symbol = findSelected(newNamespace.ArrayOfToCurrency).symbol;
+				element2.innerHTML = `<span>${OutputAsCurrency((element1.value * rate).toFixed(2), symbol)}</span>`;
 			}
+			var time = new Date(newNamespace.time * 1000);
+			UpdateElement("updatetime", `The rate was updated at <em>${time}</em>`);
 			UpdateElement("updaterate", `The rate is <em>${rate}</em>`);
+			UpdateElement("otherinfo", `The rate is updated every hour.`);
 		})
+		document.getElementById(list[i].id).onmouseover = () => {
+			HasFocus(list[i].id, "help-message", msgText);
+		}
+		document.getElementById(list[i].id).onmouseleave = () => {
+			LostFocus(list[i].id, "help-message", msgText);
+		}
 	}
 }
 
+function addFocusEventToInput(id) {
+	let element = document.getElementById(id);
+	if (element) {
+		element.onfocus = () => {
+			HasFocus("from", "help-message", "Please Enter the amount of currency you have");
+		}
+		element.onblur = () => {
+			LostFocus("from", "help-message");
+		}
+	}
+}
+
+// Function to add an event listener to specific elements
 function addListenerToInput(id1, id2) {
 	let element1 = document.getElementById(id1);
 	let element2 = document.getElementById(id2);
-	if (element1 && element2 && element1.value != undefined && element2.value != undefined) {
+	if (element1 && element2 && element1.value != undefined) {
+		// Binds update information to the element "onchange" event
 		element1.addEventListener("change", event => {
 			let rate = findRate();
-			element2.value = (element1.value * rate).toFixed(2);
+			let symbol = findSelected(newNamespace.ArrayOfToCurrency).symbol;
+			element2.innerHTML = `<span>${OutputAsCurrency((element1.value * rate).toFixed(2), symbol)}</span>`;
+			// Get the time when the conversion rate is updated
 			var time = new Date(newNamespace.time * 1000);
+			// Update time, rate and other information
 			UpdateElement("updatetime", `The rate was updated at <em>${time}</em>`);
 			UpdateElement("updaterate", `The rate is <em>${rate}</em>`);
 			UpdateElement("otherinfo", `The rate is updated every hour.`);
@@ -89,6 +120,7 @@ function addListenerToInput(id1, id2) {
 	}
 }
 
+// Function to update the "id", with a new value
 function UpdateElement(id, newValue) {
 	var elementOnForm = document.getElementById(id);
 	if (elementOnForm && elementOnForm.innerHTML !== undefined) {
@@ -99,6 +131,7 @@ function UpdateElement(id, newValue) {
 	}
 }
 
+// Function that returns the conversion rate 
 function findRate() {
 	var rate = 1.0;
 	var currencyFrom = findSelected(newNamespace.ArrayOfFromCurrency);
@@ -134,8 +167,8 @@ function fetchData() {
 		})
 }
 
+// Function to set up default rate for the library
 function setUpDefaultRate() {
-
 	fx.rates = {
 		CAD: 1.26541,
 		ETH: 0.00061,
@@ -146,15 +179,58 @@ function setUpDefaultRate() {
 	fx.base = 'USD';
 }
 
+function OutputAsCurrency(value, currency, locale) {
+	// debugger;
+	// If the caller didn't specify the currency, use a default of Canadian dollars
+	if (!currency) {
+		currency = "CAD";
+	}
+	// If the caller didn't specify the regional locale, use the web browser default locale
+	if (!locale) {
+		locale = GetPreferredRegion();
+	}
+	// Bug fix -- if they pass a string value, convert it to a number first
+	if (typeof value == "string") {
+		value = parseFloat(value);
+	}
+
+	var valueAsCurrency = "";
+	var conversionRules = {
+		style: "currency",
+		currency: currency
+	}
+
+	if (value && value.toLocaleString() !== undefined) {
+		valueAsCurrency = value.toLocaleString(locale, conversionRules);
+	}
+	return valueAsCurrency;
+}
+
+function GetPreferredRegion() {
+	var regionalLanguage = "en-US";
+	if (navigator.languages && navigator.languages.length) {
+		regionalLanguage = navigator.languages[0];
+	} else {
+		regionalLanguage = navigator.userLanguage || navigator.language || navigator.browserLanguage || 'en';
+	}
+	return regionalLanguage;
+}
 // Change the background and border of the selected element
 window.onload = () => {
 	populateCurrencyList();
 
-	addListenerToArray(newNamespace.ArrayOfFromCurrency, "FromHidden", "from", "to");
-	addListenerToArray(newNamespace.ArrayOfToCurrency, "ToHidden", "from", "to");
+	addListenerToArray(
+		newNamespace.ArrayOfFromCurrency,
+		"FromHidden", "from", "to",
+		"Please choose the currency you HAVE");
+	addListenerToArray(newNamespace.ArrayOfToCurrency,
+		"ToHidden", "from", "to",
+		"Please choose the currency you WANT");
 
 	fetchData();
 	setUpDefaultRate();
 
 	addListenerToInput("from", "to");
+
+	addFocusEventToInput("from");
 }
