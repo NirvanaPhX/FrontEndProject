@@ -1,0 +1,18 @@
+/* Selectors in this group support for error validations */
+@media all {
+    #errmessage {
+      border: 2px solid red;
+      margin-top: 20px;
+      border-radius: 5px;
+      padding: 10px;
+      color: black;
+    }
+    .InputInError {
+      background-color:rgb(251, 205, 135);
+    }
+    .problem-description {
+      background-color:rgb(251, 205, 135);
+      color: black;
+    }
+  }
+  
