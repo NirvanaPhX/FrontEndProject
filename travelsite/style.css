@@ -22,6 +22,13 @@ body {
     font-family: 'Akaya Telivigala', cursive;
 }
 
+.header h1 {
+    border:none;
+    border-bottom: 3px solid ivory;
+    border-width: 50%;
+    margin-bottom: 1rem;
+}
+
 .container {
     margin: 0 auto;
     padding: 2rem;
@@ -83,28 +90,28 @@ figure {
 }
 
 #imglist1{
-    animation-delay: 32s;
-}
-#imglist2{
     animation-delay: 28s;
 }
-#imglist3{
+#imglist2{
     animation-delay: 24s;
 }
-#imglist4{
+#imglist3{
     animation-delay: 20s;
 }
-#imglist5{
+#imglist4{
     animation-delay: 16s;
 }
-#imglist6{
+#imglist5{
     animation-delay: 12s;
 }
-#imglist7 {
+#imglist6{
     animation-delay: 8s;
 }
-#imglist8 {
+#imglist7 {
     animation-delay: 4s;
+}
+#imglist8 {
+    animation-delay: 0s;
 }
 
 .footer {
@@ -148,4 +155,12 @@ figure {
     top: -25px;
     left: 0;
     border-radius: 50%;
+}
+
+#logo {
+    width: 40%;
+    margin: 0 auto;
+    border: none;
+    border-radius: 50%;
+    border-bottom: 2px solid white;
 }

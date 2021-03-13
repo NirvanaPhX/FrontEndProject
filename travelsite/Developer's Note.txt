@@ -1,8 +1,11 @@
+- The Knowledge Learned to implement this techniques are from following websites:
 https://drafts.csswg.org/css-transitions/#transition-delay-property
-
 
 http://css3.bradshawenterprises.com/cfimg/
 
+- The pictures are dowonloaded from https://unsplash.com/
+
+Trial and Failure: (Needs to be tested)
 #SlideShow {
     width: 740px;
     height: 588px;
@@ -22,7 +25,6 @@ http://css3.bradshawenterprises.com/cfimg/
         background-image: url("img/river.jpg");
     }
 }
-
 
 @keyframes animateText {
     0%{left:-20%;}
