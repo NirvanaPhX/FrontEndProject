@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="form-control-checkbox">
+        <label class="checkboxtitle">Addons:</label><br><br>
+        <input type="checkbox" name="addons" id="creamcheese" value='creamCheesingIcing' onchange="extra[0]= this.checked ? this.value : null;">
+        <label for="addons">Cream Cheesing Icing:................................. $5</label><br>
+        <input type="checkbox" name="addons" id="fruitalmonds" value='fruitAlmondsTopping' onchange="extra[1]= this.checked ? this.value : null;">
+        <label for="addons">Fruit and Almonds Topping:.......................... $7</label><br>
+        <input type="checkbox" name="addons" id="fruitjam" value='fruitJamFilling' onchange="extra[2]= this.checked ? this.value : null; alert(extra);">
+        <label for="addons">Fruit Jam Filling:........................................... $4</label><br>
+    </div>
+
+</body>
+
+</html>

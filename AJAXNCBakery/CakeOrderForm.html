@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="FocusJS.css">
+    <script src="main.js"></script>
+    <script src="StandardJSFunctions.js"></script>
+    <script src="FocusJSFunctions.js"></script>
+    <title>New City Bakery</title>
+</head>
+
+<body>
+    <span id="help-message" class="msg-icon hidden"></span>
+    <div class="header">
+        <div>
+            <h1>New City Bakery Co.</h1>
+        </div>
+
+        <div class="contactinfo">
+            <h2>Contact Information</h2>
+            <div>Phone: 403-123-4567</div>
+            <div>Address: 123 Bear Street, Calgary, AB</div>
+        </div>
+    </div>
+
+    <div class="container">
+        <form action="javascript:void(1);" id="myForm">
+
+            <div class="inputfield form-control">
+                <label for="fname" class="required">First Name: </label>
+                <input type="text" name="fname" id="fname" maxlength=25 pattern="[a-zA-Z-\s]{0,25}"
+                    placeholder="Enter your first name" data-helpMsg="Please enter your firstname"
+                    title="Maximum 25 characters, only letters and -, space allowed" required>
+            </div><br>
+
+            <div class="inputfield form-control">
+                <label for="lname" class="required">Last Name: </label>
+                <input type="text" name="lname" id="lname" maxlength=25 pattern="[a-zA-Z-\s]{0,25}"
+                    data-helpMsg="Please enter your lastname"
+                    title="Maximum 25 characters, only letters and -, space allowed" placeholder="Enter your first name"
+                    required>
+            </div><br>
+
+            <div class="inputfield form-control">
+                <label for="address" class="required">Address: </label>
+                <input type="text" name="address" id="address" data-helpMsg="Please enter your addresss"
+                    placeholder="Please enter your address" title="Maximum 100 characters allowed" maxlength=100
+                    required>
+            </div><br>
+
+            <div class="inputfield form-control">
+                <label for="postalCode" class="required">Postal Code: </label>
+                <input type="text" name="postalCode" id="postalCode" data-helpMsg="Please enter your postal code"
+                    title="Maximum 7 characters, only letters, digits and -, space allowed;ex:T1T T2T" maxlength=7
+                    pattern="[A-Za-z][0-9][A-Za-z][\s]{0,1}[0-9][A-Za-z][0-9]" placeholder="ex:T1T T2T" required>
+            </div><br>
+
+            <div class="inputfield form-control">
+                <label for="tel" class="required">Phone Number: </label>
+                <input type="tel" name="tel" id="tel"
+                    pattern="[0-9]{0,1}[ -]{0,1}[\(]{0,1}[0-9]{3}[\).]{0,1}[ \-.]{0,1}[0-9]{3}[ \-.]{0,1}[0-9]{4}"
+                    data-helpMsg="Please enter your phone number"
+                    title="Maximum 12 characters, only digits and -, space allowed;ex: 000-000-0000" maxlength=12
+                    placeholder="ex: 000-000-0000" required>
+            </div><br>
+
+            <div class="inputfield form-control">
+                <label for="email" class="required">Email: </label>
+                <input type="email" name="email" id="email" data-helpMsg="Please enter your email"
+                    title="Maximum 50 characters;example@domain.com" maxlength=50
+                    pattern="[a-zA-Z0-9]{1,}[@]{1}[a-zA-Z0-9]{1,}[.]{1}[a-zA-Z]{1,}" placeholder="example@domain.com"
+                    required>
+            </div><br>
+
+            <div id="caketype">
+            </div>
+
+            <div id="cakearea">
+            </div>
+
+            <div id="addons">
+            </div>
+
+            <div class="buttongroup">
+                <input type="reset" value="Reset" class="btn" id="reset">
+                <input type="submit" value="Submit" class="btn">
+            </div>
+        </form>
+    </div>
+    <div id="invoice">
+    </div>
+</body>
+
+</html>

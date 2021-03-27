@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="selectionstyle">
+        <label class="underline">Choose the layer of your cake</label><br>
+        <div class="grid3">
+            <div>
+                <input type="radio" name="cakelayer" id="layer1" value="1" onchange="layer=this.value">
+                <label for="cakelayer">One Layer</label>
+            </div>
+            <div>
+                <input type="radio" name="cakelayer" id="layer1" value="2" onchange="layer=this.value">
+                <label for="cakelayer">Two Layer</label>
+            </div>
+            <div>
+                <input type="radio" name="cakelayer" id="layer1" value="3" onchange="layer=this.value">
+                <label for="cakelayer">Three Layer</label>
+            </div>
+        </div>
+        <div class="rc_dimension">
+            <label for="radius">Radius:</label>
+            <input type="number" name="radius" id="radius" min=15 max=30 onchange="cakeradius=this.value">
+        </div>
+    </div>
+ </body>
+</html>

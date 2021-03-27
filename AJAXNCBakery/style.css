@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family:'Indie Flower', sans-serif;
+    background: linear-gradient(#e0b8b6,#bb8f62);
+    color: white;
+}
+
+.header {
+    color: #8d5f52;
+    text-align: center;
+    padding-top: 2rem;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    text-shadow: 5px 5px 10px #c69d98;
+    font-weight: bold;
+}
+
+.header h1 {
+    font-size: 2.5em;
+    color:pink;
+    text-shadow: 1px 1px 2px white;
+}
+
+.contactinfo {
+    color: white ;
+    border-top: 3px solid black;
+    padding-top: 1rem;
+    font-size: 1rem;
+}
+
+.container {
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    margin: 1rem;
+    border: 1px solid black;
+    background-image: url("img/bread.jpg");
+    background-size: cover;
+    opacity: 0.8;
+    background-color: wheat;
+    background-blend-mode: multiply;
+    font-weight: bold;
+}
+
+.required::after {
+    content: "*";
+    color: red;
+}
+
+.form-control {
+    margin: -0.5rem;
+    height: 3rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-control label {
+    width: 150px;
+    height: 2rem;
+    font-size: 1.2rem;
+}
+
+.form-control input{
+    width: 250px;
+    height: 2rem;
+    padding-left : 1.5rem;
+}
+
+.form-control-radiobtn {
+    padding: 1rem;
+    margin: 1rem;
+    font-size: 1.2rem;
+}
+
+.form-control-checkbox {
+    font-size: 1.2rem;
+}
+
+#sheetcake, #roundcake {
+    font-size: 1.4rem;
+}
+
+.radiolabelinput {
+    margin-left: 2rem;
+    margin-right: 1rem;
+}
+
+.checkboxtitle {
+    font-size: 2rem;
+    text-decoration: underline;
+}
+
+.buttongroup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn {
+    padding: 0.6rem 4rem;
+    margin: 1rem;
+    border-radius: 5px;
+    border: 2px solid grey;
+    font-size: 1.2rem;
+}
+
+.btn:hover {
+    background-color: darkgray;
+}
+
+
+.column {
+    flex:33.33%;
+}
+.row {
+  display: flex;
+}
+
+.imgbtn {
+ padding: 0.6rem 3rem;
+ border-radius: 4px;
+ font-weight: bold;
+}
+
+.imgbtn:hover {
+    background-color:#a27d58;
+}
+.imgbtn:focus {
+    background-color:#a27d58;
+}
+
+#cakearea {
+    font-size: 1.2rem;
+    border: 1px solid black;
+}
+
+.grid3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 1rem;
+}
+
+.sc_dimension {
+    padding: 1rem;
+}
+.sc_dimension input {
+    width: 20%;
+}
+.rc_dimension {
+    padding: 1rem;
+}
+.rc_dimension input {
+    width: 20%;
+}
+.underline {
+    text-decoration: underline;
+}
+
+.selectionstyle {
+    background: black;
+    opacity: 0.8;
+}
+
+#invoice {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 1rem;
+    margin: 1rem;
+}
