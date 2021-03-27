@@ -1,5 +1,5 @@
-# FrontEndProject
-Some front end projects
+# SmallWebProject
+Some web projects
 
 <h1>Currency Converter</h1>
 Enable the exchange between 5 kinds of currency: US Dollar, Canadian Dollar, Euro, Bitcoin, Ethereum.<br/>
