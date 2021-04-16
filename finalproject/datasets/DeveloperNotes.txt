@@ -1,0 +1,29 @@
+ I can filter data to show only a limited records instead of loading the entire dataset
+ I can do this by constructing a query using the $query in the 'GET' URL
+ EX: $query=SELECT incident_info, description, start_dt WHERE STARTS_WITH(UPPER(incident_info), UPPER('NORTH'))
+        // Construct query
+        // var query = URL1 + StartWith(keyword);
+    function StartWith(value) {
+        return "?$query=SELECT incident_info, start_dt, description, latitude, longitude WHERE STARTS_WITH(UPPER(incident_info), UPPER('" + value + "'))";
+    }
+        $.ajax({
+            type: 'GET',
+            url: query,
+            // dataType: "",
+            success: function (data) {
+                console.log('Data successfully loaded');
+                // console.log(data);
+                $.each(data, () => {
+                    // list = data;
+                    addEntry(data);
+                })
+            },
+            error: () => {
+                console.log("Something went wrong.");
+            },
+            // Handle 400 and 500 errors
+            statusCode: {
+                404: () => { console.log("Page not found"); },
+                500: () => { console.log("Server Error"); }
+            }
+        });

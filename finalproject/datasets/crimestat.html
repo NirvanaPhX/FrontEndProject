@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crime Stats</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="mustache.js"></script>
+    <script src="crimestat.js"></script>
+</head>
+
+<body>
+    <h1> This is a collection of data on Calgary Crime Stats</h1>
+    <div class="searchForm">
+        <label>Search By:</label>
+        <select name="searchValue" id="searchValue">
+            <option value="">--Please Select One--</option>
+            <option value="sector">Sector</option>
+            <option value="community">Community</option>
+            <option value="category">Category</option>
+            <option value="year">Year</option>
+            <option value="count">Count</option>
+        </select>
+        <br>
+        <label>Enter the information:</label>
+        <input type="text" id="inputValue">
+    </div>
+
+    <div id="displayData-grid">
+
+    </div>
+
+    <template id="grid-template">
+        <!-- This is a card we want to clone -->
+        <div class="grid">
+                <span>{{sector}}</span>
+                <span>{{community_name}}</span>
+                <span>{{category}}</span>
+                <span>{{count}}</span>
+                <span>{{year}}</span>
+                <span>{{month}}</span>
+                <span><a href="https://www.google.com/maps/search/?api=1&query={{geocoded_column.latitude}},{{geocoded_column.longitude}}" target="_blank">Locate on Google Map</a></span>
+        </div>
+    </template>
+
+</body>
+
+</html>

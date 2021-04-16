@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="mustache.js"></script>
+    <script src="trafficincident.js"></script>
+</head>
+
+<body>
+    <h1> This is a collection of data on Calgary Traffic Incidents</h1>
+    <div class="searchForm">
+        <label>Search By:</label>
+        <select name="searchValue" id="searchValue">
+            <option value="">--Please Select One--</option>
+            <option value="info">Incident Information</option>
+            <option value="date">Date</option>
+            <option value="description">Description</option>
+        </select>
+        <br>
+        <label>Enter the information:</label>
+        <input type="text" id="tfcIncdtInfo">
+    </div>
+    <div id="displayData">
+
+    </div>
+
+    <template id="card-template">
+        <!-- This is a card we want to clone -->
+        <div class="card">
+            <div class="card-match">
+                <label><strong>Match:</strong>{{id}}</label>
+                <span class="card-id"></span>
+            </div>
+            <div class="card-field">
+                <label><strong>Incident Info:</strong>{{incident_info}}</label>
+                <div class="card-incdt"></div>
+            </div>
+            <div class="card-field">
+                <label><strong>Date:</strong>{{start_dt}}</label>
+                <div class="card-date"></div>
+            </div>
+            <div class="card-field">
+                <label><strong>Description:</strong>{{description}}</label>
+                <div class="card-desc"></div>
+            </div>
+            <div class="card-field">
+                <label><a href="https://www.google.com/maps/search/?api=1&query={{latitude}},{{longitude}}"
+                        target="_blank">Locate on Google Map</a></label>
+                <div class="card-lati"></div>
+            </div>
+        </div>
+    </template>
+</body>
+
+</html>
